@@ -19,10 +19,22 @@
     margin: 20px auto;
 }
 
+
 .navbar-nav #logout{
-    float: right;
+    position: fixed;
+    right: 10px;
 }
 
 .navbar-nav #login{
-    float: right;
+    position: fixed;
+    right: 10px;
+}
+
+.navbar-nav #signup{
+    position: fixed;
+    right: 70px;
+}
+
+.navbar li a:hover{
+    color:orange;
 }

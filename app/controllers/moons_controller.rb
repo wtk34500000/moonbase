@@ -1,5 +1,6 @@
 class MoonsController < ApplicationController
     def index
+        @moons=Moon.all
     end
 
     def show
