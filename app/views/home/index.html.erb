@@ -1,0 +1,6 @@
+<% if log_in? %>
+    Welcome, <%= current_user.display_name %> 
+    <% else %>
+You are not log in!
+<% end %>
+

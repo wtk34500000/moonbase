@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+.form-group{
+    width: 340px;
+    margin: 20px auto;
+}
+
+.navbar-nav #logout{
+    float: right;
+}
+
+.navbar-nav #login{
+    float: right;
+}
