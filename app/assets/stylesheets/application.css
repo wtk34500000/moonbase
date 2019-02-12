@@ -14,14 +14,18 @@
  *= require_self
  */
  .container {
-    width: 400px;
-    margin: 0 auto;
- 
+    margin: 10px auto;
 }
 
-.card{
-    float: left;
+.margin-top{
+    margin-top: 20px;
 }
+
+.planet-card .card{
+    margin: 0 auto;
+    /* float: left; */
+}
+
 
 .form-group{
     width: 340px;
@@ -42,8 +46,4 @@
 .navbar-nav #signup{
     position: fixed;
     right: 70px;
-}
-
-.navbar li a:hover{
-    color:orange;
 }
