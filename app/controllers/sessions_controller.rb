@@ -4,14 +4,16 @@ class SessionsController < ApplicationController
 
     def create    
         user=User.find_by(email: params[:email])
-        if user.valid? 
+        if user!=nil && user.valid? 
             user=user.authenticate(params[:password])
             session[:user_id]=user.id
             redirect_to "/home/users/#{user.id}"
         else
-            flash[:error]=[]
-            flash[:error]=user.errors.full_messages
-            render :new
+            if user!=nil
+                flash[:error]=[]
+                flash[:error]=user.errors.full_messages
+            end
+                render :new
         end
     end
 

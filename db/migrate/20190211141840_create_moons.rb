@@ -4,10 +4,12 @@ class CreateMoons < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :user_id
       t.integer :planet_id
-      t.string :year_discovered
-      t.string :distance
-      t.string :size
       t.string :img_url
+
+      t.string :size
+      t.string :distance
+      t.string :year_discovered
+
       t.timestamps
     end
   end
