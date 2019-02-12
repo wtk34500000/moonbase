@@ -13,6 +13,15 @@
  *= require_tree .
  *= require_self
  */
+ .container {
+    width: 400px;
+    margin: 0 auto;
+ 
+}
+
+.card{
+    float: left;
+}
 
 .form-group{
     width: 340px;

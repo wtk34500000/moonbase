@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   #planet routes
   get "/home/planets", to: "planets#index", as: 'planets'
-  get "/hoome/planets/:id", to: "planets#show", as: 'planet'
+  get "/home/planets/:id", to: "planets#show", as: 'planet'
 
   #moon routes
   get "/home/moons", to: "moons#index", as: 'moons'
