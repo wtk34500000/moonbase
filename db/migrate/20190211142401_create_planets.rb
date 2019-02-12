@@ -3,7 +3,6 @@ class CreatePlanets < ActiveRecord::Migration[5.2]
     create_table :planets do |t|
       t.string :name
       t.string :size
-      t.string :distance
       t.string :img_url
       t.integer :moon_count
 

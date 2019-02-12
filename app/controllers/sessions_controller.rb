@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
         if user.valid? 
             user=user.authenticate(params[:password])
             session[:user_id]=user.id
-            redirect_to "/home"
+            redirect_to "/home/users/#{user.id}"
         else
             flash[:error]=[]
             flash[:error]=user.errors.full_messages

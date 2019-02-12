@@ -10,12 +10,16 @@ class UsersController < ApplicationController
         if params[:user][:password] == params[:user][:confirm_password]
             user.save
             session[:user_id]=user.id
-            redirect_to "/home"
+            redirect_to "/home/users/#{user.id}"
         else
             flash[:error]=[]
             flash[:error]=user.errors.full_messages
             render :new
         end
+   end
+
+   def show
+      @user=User.find(params[:id])
    end
 
 
