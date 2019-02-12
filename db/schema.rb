@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 2019_02_11_142401) do
     t.string "name"
     t.integer "user_id"
     t.integer "planet_id"
-    t.string "year_discovered"
-    t.string "distance"
-    t.string "size"
     t.string "img_url"
+    t.string "size"
+    t.string "distance"
+    t.string "year_discovered"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 2019_02_11_142401) do
   create_table "planets", force: :cascade do |t|
     t.string "name"
     t.string "size"
-    t.string "distance"
     t.string "img_url"
     t.integer "moon_count"
     t.datetime "created_at", null: false
