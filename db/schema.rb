@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(version: 2019_02_11_142401) do
     t.string "name"
     t.integer "user_id"
     t.integer "planet_id"
+    t.string "year_discovered"
+    t.string "distance"
+    t.string "size"
     t.string "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
