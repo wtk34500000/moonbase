@@ -1,0 +1,4 @@
+<h1><%= pluralize(@moons.count, "Moon")%></h1>
+<%= @moons.each do |moon|%>
+    <li><%= link_to moon.name, moon_path(moon) %></li>
+<% end %>

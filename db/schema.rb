@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 2019_02_11_142401) do
 
   create_table "planets", force: :cascade do |t|
     t.string "name"
-    t.integer "size"
-    t.integer "distance"
+    t.string "size"
+    t.string "distance"
     t.string "img_url"
     t.integer "moon_count"
     t.datetime "created_at", null: false

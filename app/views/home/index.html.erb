@@ -1,0 +1,12 @@
+<div class="jumbotron">
+    <div class="container">
+      <% if log_in? %>
+        <h1> <i class="fas fa-globe"></i> Welcome, <%= current_user.display_name %></h1>
+      <%end%>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, quos! Mollitia cupiditate ratione fuga dignissimos numquam omnis quas illo, expedita fugit inventore maiores autem culpa debitis sit perferendis nulla provident.</p>
+        <p>
+          <a class="btn btn-primary btn-lg" href="#">Profile</a>
+        </p>
+    </div>
+  </div>
+

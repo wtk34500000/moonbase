@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+ .container {
+    width: 400px;
+    margin: 0 auto;
+ 
+}
+
+.card{
+    float: left;
+}
+
+.form-group{
+    width: 340px;
+    margin: 20px auto;
+}
+
+
+.navbar-nav #logout{
+    position: fixed;
+    right: 10px;
+}
+
+.navbar-nav #login{
+    position: fixed;
+    right: 10px;
+}
+
+.navbar-nav #signup{
+    position: fixed;
+    right: 70px;
+}
+
+.navbar li a:hover{
+    color:orange;
+}
