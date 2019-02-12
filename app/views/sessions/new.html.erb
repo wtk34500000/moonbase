@@ -1,14 +1,15 @@
 
-
-<%= form_tag "/home/login" do%>
-    <h2 class="text-center">Log in</h2>
-    <div class="form-group">
-        <%= email_field_tag :email, "", class: "form-control", placeholder: "Email" %>
-    </div>
-    <div class="form-group">
-        <%= password_field_tag :password, "", class:"form-control",placeholder: "Password"%>
-    </div>
-    <div class="form-group">
-        <%= submit_tag "Log in", class: "btn btn-primary btn-block" %>
-    </div>
-<% end %>
+<div class="container">
+  <%= form_tag "/home/login" do%>
+      <h2 class="text-center">Log in</h2>
+      <div class="form-group">
+          <%= email_field_tag :email, "", class: "form-control", placeholder: "Email" %>
+      </div>
+      <div class="form-group">
+          <%= password_field_tag :password, "", class:"form-control",placeholder: "Password"%>
+      </div>
+      <div class="form-group">
+          <%= submit_tag "Log in", class: "btn btn-primary btn-block" %>
+      </div>
+  <% end %>
+</div>
