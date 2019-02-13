@@ -4,7 +4,7 @@ class MoonsController < ApplicationController
 
     def index
         if params[:q]
-            @moon=Moon.find_by(name: params[:q])
+            @moon=Moon.find_by(name: params[:q].capitalize)
             if !@moon.nil?
                return redirect_to moon_path(@moon)
             end
@@ -14,23 +14,23 @@ class MoonsController < ApplicationController
             @mars=[]
             @jupiter=[]
             @saturn=[]
-            @uranus=[] 
+            @uranus=[]
             @neptune=[]
             @moons.each do |moon|
-                if moon.planet_id == 1 
-                        @earth<<moon 
-                elsif moon.planet_id == 2 
-                        @mars<<moon 
-                elsif moon.planet_id == 3 
-                        @saturn<<moon 
-                elsif moon.planet_id == 4  
-                        @jupiter<<moon 
-                elsif moon.planet_id == 5 
-                        @uranus<<moon 
-                elsif moon.planet_id == 6 
-                        @neptune<<moon 
-                end 
-            end 
+                if moon.planet_id == 1
+                        @earth<<moon
+                elsif moon.planet_id == 2
+                        @mars<<moon
+                elsif moon.planet_id == 3
+                        @saturn<<moon
+                elsif moon.planet_id == 4
+                        @jupiter<<moon
+                elsif moon.planet_id == 5
+                        @uranus<<moon
+                elsif moon.planet_id == 6
+                        @neptune<<moon
+                end
+            end
     end
 
     def show

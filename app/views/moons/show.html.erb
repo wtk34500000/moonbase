@@ -7,9 +7,8 @@
         <p>Moon Name: <%= @moon.name %></p>
         <% if @moon.user_id==nil%>
             <%= form_for(@moon, method: :patch) do |f|%>
-                <%= f.submit "Buy" %>
+                <%= f.submit "Claim", class: "btn btn-success" %>
             <% end %>
         <%end%>
     </div>
 </div>
-
