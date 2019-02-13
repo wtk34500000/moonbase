@@ -1,0 +1,40 @@
+
+<div class="container-fluid">
+    <h3>Owns <%= pluralize(@user.moons.count, "Moon")%>: </h3>
+    <p><%= @user.first_name%></p>
+    <p><%= @user.last_name%></p>
+    <div class="user-delete">
+        <%= form_for @user, method: :delete do |f| %>
+            <%= f.submit "Delete", class: "btn btn-danger btn-lg"%>
+        <% end %>
+    </div>
+    <div class="user-edit">
+        <%= link_to "Edit", "/home/users/#{@user.id}/edit", class: "btn btn-success btn-lg" %>
+    </div>
+
+    <div class="row">
+        <% @user.moons.each do |moon|%>
+            <div class="col-sm-4">
+                <div class="card" style="width: 15rem;">
+                        <img class="card-img-top" src= <%= moon.img_url%> alt="Card image cap" height="200px">
+                        <div class="card-body">
+                            <h5 class="card-title"><%=moon.name %>: </h5>
+            
+                            <p class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, nihil?
+                                <li>Size: <%= moon.size %></li>moon
+                            </p>
+                            <div class="in-line">
+                                <a href="/home/moons/<%=moon.id%>" class="btn btn-primary">View</a>
+                            </div>
+                            <div class="sell-planet in-line">
+                                <%= form_tag("/home/users/#{@user.id}/unclaim/#{moon.id}", method: :patch) do |f| %>
+                                    <%= submit_tag "Unclaim", class: "btn btn-danger"%>
+                                <%end%>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        <%end if @user.moons%>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="planet-img">
+        <img src=<%= @planet.img_url %> alt="planet img url" height="500" width="500">
+    </div>
+
+    <div class="planet-info">
+
+        <h1><%= @planet.name %></h1>
+        <p>Planet Size: <%= @planet.size %></p>
+        <% if @planet.has_owner? %>
+          <p>Planet Owner: <%= @planet.get_owner.display_name %></p>
+        <% else %>
+          <p>Planet Owner: No Owner </p>
+        <% end %>
+    </div>
+
+    <% @planet.moons.each do |moon|%>
+            <li><%= link_to moon.name, moon_path(moon)%></li>
+    <%end if @planet.moons %>
+
+</div>
