@@ -15,6 +15,11 @@ Rails.application.routes.draw do
   get "/home/users/new", to: "users#new", as: 'new_user'
   post "/home/users", to: "users#create"
   get "/home/users/:id", to: "users#show", as: 'user'
+  get "/home/users/:id/edit", to: "users#edit", as: "edit_user"
+  patch "/home/users/:id/unclaim/:moon_id", to: "users#unclaim"
+  patch "/home/users/:id", to: "users#update"
+  delete "/home/users/:id", to: "users#destroy"
+  
 
   #planet routes
   get "/home/planets", to: "planets#index", as: 'planets'
@@ -22,7 +27,9 @@ Rails.application.routes.draw do
 
   #moon routes
   get "/home/moons", to: "moons#index", as: 'moons'
-  get "/home/moon/:id", to: "moons#show", as: 'moon'
+  get "/home/moons?q=moon_name", to: "moons#index"
+  get "/home/moons/:id", to: "moons#show", as: 'moon'
+  patch "/home/moons/:id", to: "moons#update"
 
 
 

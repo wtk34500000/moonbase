@@ -1,45 +1,55 @@
-<% if flash[:error] %>
-    <% flash[:error].each do |err|%>
-        <li><% err %></li>
-    <% end %>
-<%end%>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="card card-signin flex-row my-5">
+          <div class="card-img-left d-none d-md-flex">
+             <!-- Background image for card set in CSS! -->
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center">Register</h5>
+            <% if flash[:error] %>
+              <% flash[:error].each do |e| %>
+                <li class="text-center" style="color: red"><%= e %></li>
+              <% end %>
+            <% end %>
+            <%= form_for @user, url: "/home/users", html: {class: "form-signin"} do |f|%>
+              <div class="form-label-group">
+                <%= f.text_field :first_name, id:"inputFirstname", class: "form-control", placeholder: "First Name" %>
+                <label for="inputFirstname">First Name</label>
+              </div>
 
-<%= form_for(@user, url: "/home/users") do |f| %>
-    <h1 class="text-center">Register:  </h1>
+              <div class="form-label-group">
+                <%= f.text_field :last_name, id:"inputLastname", class: "form-control", placeholder: "Last Name" %>
+                <label for="inputLastname">Last Name</label>
+              </div>
 
-    <div class="first-name form-group">
-        <%# f.label :first_name %>
-        <%= f.text_field :first_name, class: "form-control", placeholder: "First Name" %>
+              <div class="form-label-group">
+                <%= f.text_field :display_name, id:"inputDisplayname", class: "form-control", placeholder: "Display Name" %>
+                <label for="inputDisplayname">Display Name</label>
+              </div>
+
+              <div class="form-label-group">
+                <%= f.email_field :email, id: "inputEmail", class: "form-control", placeholder: "Email address" %>
+                <label for="inputEmail">Email Address</label>
+              </div>
+
+              <hr>
+
+              <div class="form-label-group">
+                <%= f.password_field :password, id: "inputPassword", class: "form-control", placeholder:"Password"%>
+                <label for="inputPassword">Password</label>
+              </div>
+
+              <div class="form-label-group">
+                <%= f.password_field :confirm_password, id:"inputConfirmPassword", class: "form-control", placeholder: "Confirm Password"%>
+                <label for="inputConfirmPassword">Confirm password</label>
+              </div>
+
+              <%= f.submit "Register", class: "btn btn-lg btn-primary btn-block text-uppercase"%>
+              <a class="d-block text-center mt-2 small" href="/home/login">Sign In</a>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-    
-    <div class="last-name form-group">
-        <%# f.label :last_name %>
-        <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name" %>
-    </div>
-
-    <div class="display-name form-group">
-        <%# f.label :display_name %>
-        <%= f.text_field :display_name, class: "form-control", placeholder: "Display Name" %>
-    </div>
-
-    <div class="email form-group">
-        <%# f.label :email %>
-        <%= f.email_field :email, class: "form-control", placeholder: "Email" %>
-    </div>
-
-    <div class="password form-group">
-        <%# f.label :password %>
-        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
-    </div>
-
-    <div class="confirm-password form-group">
-        <%# f.label :confirm_password %>
-        <%= f.password_field :confirm_password, class: "form-control", placeholder: "Confirm Password" %>
-    </div>
-
-
-    <div class="submit form-group">
-        <%= f.submit "Sign Up", class: "btn btn-primary btn-block" %>
-    </div>
-    
-<% end if @user%>
+  </div>

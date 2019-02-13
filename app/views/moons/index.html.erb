@@ -1,4 +1,56 @@
-<h1><%= pluralize(@moons.count, "Moon")%></h1>
-<%= @moons.each do |moon|%>
-    <li><%= link_to moon.name, moon_path(moon) %></li>
-<% end %>
+<div class="container-fluid">
+    <div class="jumbotron">
+        <div class="search-bar text-center">
+            <%= form_tag("/home/moons", method: "get") do %>
+                <%= label_tag(:q, "Search Moon:") %>
+                <%= text_field_tag(:q) %>
+                <%= submit_tag("Search", class: "btn btn-primary") %>
+            <% end%>
+        </div>
+    </div>
+   
+    <div class="row">
+        <div class="col-sm-2">
+            <h3>Earth</h3>
+              <hr>
+            <% @earth.each do |moon|%>
+                <li><%= link_to moon.name, moon_path(moon)%></li>
+            <% end %>
+        </div>
+        <div class="col-sm-2">
+            <h3>Mars</h3>
+              <hr>
+            <% @mars.each do |moon|%>
+                <li><%= link_to moon.name, moon_path(moon)%></li>
+            <% end  %>
+        </div>
+        <div class="col-sm-2">
+            <h3>Jupiter</h3>
+              <hr>
+            <% @jupiter.each do |moon|%>
+                <li><%= link_to moon.name, moon_path(moon)%></li>
+            <% end %>
+        </div>
+        <div class="col-sm-2">
+          <h3>Saturn</h3>
+            <hr>
+            <% @saturn.each do |moon|%>
+                <li><%= link_to moon.name, moon_path(moon)%></li>
+            <% end %>
+        </div>
+          <div class="col-sm-2">
+          <h3>Uranus</h3>
+            <hr>
+            <% @uranus.each do |moon|%>
+                <li><%= link_to moon.name, moon_path(moon)%></li>
+            <% end %>
+        </div>
+          <div class="col-sm-2">
+          <h3>Neptune</h3>
+          <hr>
+            <% @neptune.each do |moon|%>
+                <li><%= link_to moon.name, moon_path(moon)%></li>
+            <% end %>
+        </div>
+    </div>
+</div>

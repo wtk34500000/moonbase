@@ -10,6 +10,7 @@ require 'open-uri'
 
 Moon.destroy_all
 Planet.destroy_all
+User.destroy_all
 
 html = open("https://www.windows2universe.org/our_solar_system/moons_table.html")
 doc = Nokogiri::HTML(html)
