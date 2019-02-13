@@ -1,4 +1,14 @@
 <div class="container-fluid">
+    <div class="jumbotron">
+        <div class="search-bar text-center">
+            <%= form_tag("/home/moons", method: "get") do %>
+                <%= label_tag(:q, "Search Moon:") %>
+                <%= text_field_tag(:q) %>
+                <%= submit_tag("Search", class: "btn btn-primary") %>
+            <% end%>
+        </div>
+    </div>
+   
     <div class="row">
         <div class="col-sm-2">
             <h3>Earth</h3>
@@ -12,7 +22,7 @@
               <hr>
             <% @mars.each do |moon|%>
                 <li><%= link_to moon.name, moon_path(moon)%></li>
-            <% end %>
+            <% end  %>
         </div>
         <div class="col-sm-2">
             <h3>Jupiter</h3>
