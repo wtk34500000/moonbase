@@ -199,3 +199,7 @@ nav #menu li:hover {
 .fa-moon {
   color: white
 }
+
+.in-line{
+    display: inline-block;
+}

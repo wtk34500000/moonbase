@@ -9,7 +9,6 @@ class UsersController < ApplicationController
    
    def create
         user=User.new(user_params)
-        byebug
         if params[:user][:password] == params[:user][:confirm_password]
             user.save
             session[:user_id]=user.id
@@ -49,7 +48,11 @@ class UsersController < ApplicationController
    end
 
    def destroy
-      User.find(params[:id]).destroy
+      user=User.find(params[:id])
+      user.moons.each do |moon|
+        moon.update(user_id: nil)
+      end
+      user.destroy
       session.delete :user_id
       redirect_to "/home"
    end
