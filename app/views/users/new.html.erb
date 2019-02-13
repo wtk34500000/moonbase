@@ -1,12 +1,11 @@
-<% if flash[:error] %>
-    <% flash[:error].each do |err|%>
-        <li><% err %></li>
-    <% end %>
-<%end%>
 <div class="container-fluid">
   <%= form_for(@user, url: "/home/users") do |f| %>
       <h1 class="text-center">Register:  </h1>
-
+      <% if flash[:error] %>
+        <% flash[:error].each do |err|%>
+            <li class="text-center" style="color:red;"><%= err %></li>
+        <% end %>
+      <%end%>
       <div class="first-name form-group">
           <%# f.label :first_name %>
           <%= f.text_field :first_name, class: "form-control", placeholder: "First Name" %>
