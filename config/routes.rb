@@ -16,8 +16,10 @@ Rails.application.routes.draw do
   post "/home/users", to: "users#create"
   get "/home/users/:id", to: "users#show", as: 'user'
   get "/home/users/:id/edit", to: "users#edit", as: "edit_user"
+  patch "/home/users/:id/unclaim/:moon_id", to: "users#unclaim"
   patch "/home/users/:id", to: "users#update"
   delete "/home/users/:id", to: "users#destroy"
+  
 
   #planet routes
   get "/home/planets", to: "planets#index", as: 'planets'

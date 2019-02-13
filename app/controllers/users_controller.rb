@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 
    def update
       @user=User.find(params[:id])
-      if @user.valid? && params[:user][:password] == params[:user][:confirm_password]
+      if @user.valid? 
         @user.update(user_params)
         redirect_to "/home/users/#{@user.id}"
     else
@@ -45,6 +45,11 @@ class UsersController < ApplicationController
         flash[:error]=user.errors.full_messages
         render :new
     end
+   end
+
+   def unclaim
+        Moon.find(params[:moon_id]).update(user_id: nil)
+        redirect_to "/home/users/#{params[:id]}"
    end
 
    def destroy

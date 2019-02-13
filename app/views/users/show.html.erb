@@ -28,8 +28,8 @@
                                 <a href="/home/moons/<%=moon.id%>" class="btn btn-primary">View</a>
                             </div>
                             <div class="sell-planet in-line">
-                                <%= form_for(@user, method: :patch) do |f| %>
-                                    <%= f.submit "Unclaim", class: "btn btn-danger" %>
+                                <%= form_tag("/home/users/#{@user.id}/unclaim/#{moon.id}", method: :patch) do |f| %>
+                                    <%= submit_tag "Unclaim", class: "btn btn-danger"%>
                                 <%end%>
                             </div>
                         </div>

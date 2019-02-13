@@ -4,8 +4,10 @@
     </div>
 
     <div class="planet-info">
+
         <h1><%= @planet.name %></h1>
         <p>Planet Size: <%= @planet.size %></p>
+        <p>Planet Owner: <%= @planet.get_owner.display_name %></p>
     </div>
 
     <% @planet.moons.each do |moon|%>
