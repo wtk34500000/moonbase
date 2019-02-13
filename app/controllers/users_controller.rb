@@ -23,6 +23,13 @@ class UsersController < ApplicationController
 
    def show
       @user=User.find(params[:id])
+      # count=0
+      # @user.moons.each do |moon|
+      #   if !moon.
+      #     moon.planet.user_id == @user.id
+      #     count+=1
+      #   end
+      # end
    end
 
    def edit

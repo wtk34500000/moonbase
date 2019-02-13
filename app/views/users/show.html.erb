@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container-fluid">
     <h3>Owns <%= pluralize(@user.moons.count, "Moon")%>: </h3>
     <p><%= @user.first_name%></p>
     <p><%= @user.last_name%></p>
@@ -7,6 +7,9 @@
         <%= form_for @user, method: :delete do |f| %>
             <%= f.submit "Delete", class: "btn btn-danger btn-lg"%>
         <% end %>
+    </div>
+    <div class="user-edit">
+        <%= link_to "Edit", "/home/users/#{@user.id}/edit", class: "btn btn-success btn-lg" %>
     </div>
 
     <div class="row">
