@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
   #moon routes
   get "/home/moons", to: "moons#index", as: 'moons'
+  get "/home/moons?q=moon_name", to: "moons#index"
   get "/home/moons/:id", to: "moons#show", as: 'moon'
   patch "/home/moons/:id", to: "moons#update"
 
