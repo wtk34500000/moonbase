@@ -8,6 +8,9 @@
             <%= f.submit "Delete", class: "btn btn-danger btn-lg"%>
         <% end %>
     </div>
+    <div class="user-edit">
+        <%= link_to "Edit", "/home/users/#{@user.id}/edit", class: "btn btn-success btn-lg" %>
+    </div>
 
     <div class="row">
     <% @user.moons.each do |moon|%>

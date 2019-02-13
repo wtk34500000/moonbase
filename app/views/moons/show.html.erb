@@ -1,11 +1,15 @@
-<div class="moon-img">
-    <img src=<%= @moon.img_url %> alt="planet img url" height="200" width="200">
-</div>
+<div class="container-fluid">
+    <div class="moon-img">
+        <img src=<%= @moon.img_url %> alt="planet img url" height="200" width="200">
+    </div>
 
-<div class="moon-info">
-    <p>Moon Name: <%= @moon.name %></p>
-    <% if @moon.user_id==nil%>
-        <%= button_to "Claim", "/home/moons/#{@moon.id}", method: :update %>
-    <%end%>
+    <div class="moon-info">
+        <p>Moon Name: <%= @moon.name %></p>
+        <% if @moon.user_id==nil%>
+            <%= form_for(@moon, method: :patch) do |f|%>
+                <%= f.submit "Buy" %>
+            <% end %>
+        <%end%>
+    </div>
 </div>
 

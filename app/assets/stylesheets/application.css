@@ -19,6 +19,7 @@ html {
   box-sizing: border-box;
 }
 
+
 *,
 *:before,
 *:after {
@@ -187,7 +188,7 @@ nav #menu li:hover {
 }
 
 .card{
-    float: left;
+    margin: auto;
 }
 
 .form-group{
