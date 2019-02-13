@@ -25,9 +25,7 @@
           <a href="/home/login"><li>LOGIN</li></a>
           <a href="/home/users/new"><li>SIGN UP</li></a>
         <% else %>
-
           <a href="/home/users/<%= session[:user_id]%>"><li>PROFILE</li></a>  
-
           <a href="/home/logout"><li>LOGOUT</li></a>
         <% end %>
       </ul>
