@@ -6,7 +6,7 @@ class UsersController < ApplicationController
         flash[:error]=[]
         @user=User.new
    end
-   
+
    def create
         user=User.new(user_params)
         if params[:user][:password] == params[:user][:confirm_password]
@@ -37,14 +37,14 @@ class UsersController < ApplicationController
 
    def update
       @user=User.find(params[:id])
-      if @user.valid? 
+      if @user.valid?
         @user.update(user_params)
         redirect_to "/home/users/#{@user.id}"
-    else
+      else
         flash[:error]=[]
         flash[:error]=user.errors.full_messages
         render :new
-    end
+      end
    end
 
    def unclaim
