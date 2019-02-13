@@ -9,7 +9,6 @@ class UsersController < ApplicationController
    
    def create
         user=User.new(user_params)
-        byebug
         if params[:user][:password] == params[:user][:confirm_password]
             user.save
             session[:user_id]=user.id
@@ -38,7 +37,7 @@ class UsersController < ApplicationController
 
    def update
       @user=User.find(params[:id])
-      if @user.valid? && params[:user][:password] == params[:user][:confirm_password]
+      if @user.valid? 
         @user.update(user_params)
         redirect_to "/home/users/#{@user.id}"
     else
@@ -48,8 +47,17 @@ class UsersController < ApplicationController
     end
    end
 
+   def unclaim
+        Moon.find(params[:moon_id]).update(user_id: nil)
+        redirect_to "/home/users/#{params[:id]}"
+   end
+
    def destroy
-      User.find(params[:id]).destroy
+      user=User.find(params[:id])
+      user.moons.each do |moon|
+        moon.update(user_id: nil)
+      end
+      user.destroy
       session.delete :user_id
       redirect_to "/home"
    end
