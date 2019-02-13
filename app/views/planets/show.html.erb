@@ -7,7 +7,11 @@
 
         <h1><%= @planet.name %></h1>
         <p>Planet Size: <%= @planet.size %></p>
-        <p>Planet Owner: <%= @planet.get_owner.display_name %></p>
+        <% if @planet.has_owner? %>
+          <p>Planet Owner: <%= @planet.get_owner.display_name %></p>
+        <% else %>
+          <p>Planet Owner: No Owner </p>
+        <% end %>
     </div>
 
     <% @planet.moons.each do |moon|%>
