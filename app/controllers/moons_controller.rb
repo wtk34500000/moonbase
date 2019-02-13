@@ -4,7 +4,7 @@ class MoonsController < ApplicationController
 
     def index
         if params[:q]
-            @moon=Moon.find_by(name: params[:q])
+            @moon=Moon.find_by(name: params[:q].capitalize)
             if !@moon.nil?
                return redirect_to moon_path(@moon)
             end
