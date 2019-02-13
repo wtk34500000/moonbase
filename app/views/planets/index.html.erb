@@ -1,4 +1,4 @@
-<div class="planet-card margin-top">
+<div class="planet-card margin-top container-fluid">
     <div class="row">
         <% @planets.each do |planet|%>
                 <div class="col-sm-4">
@@ -6,7 +6,7 @@
                         <img class="card-img-top" src= <%= planet.img_url%> alt="Card image cap" height="200px">
                         <div class="card-body">
                             <h5 class="card-title"><%=planet.name %>: </h5>
-            
+
                             <p class="card-text">
                                 <li>Size: <%= planet.size %></li>
                                 <li>Moons: <%= planet.moon_count %></li>
