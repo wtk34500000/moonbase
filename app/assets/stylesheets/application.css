@@ -188,7 +188,7 @@
   }
   
   .card{
-      margin: auto;
+      margin: 10px auto;
   }
   
   .form-group{
@@ -315,10 +315,6 @@
     padding-bottom: calc(var(--input-padding-y) / 3);
     font-size: 12px;
     color: #777;
-  }
-  
-  .jumbotron {
-    background-image: url("https://images.unsplash.com/photo-1514413494665-cda1387955dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
   }
 
 
@@ -534,4 +530,8 @@
     height: auto;
     cursor: pointer;
     max-width: 100%;
+  }
+
+  .white-text{
+      color:white;
   }

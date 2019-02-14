@@ -1,14 +1,18 @@
 <div class="container-fluid">
     <div class="moon-img">
-        <img src=<%= @moon.img_url %> alt="planet img url" height="200" width="200">
+        <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="<%= @moon.img_url %>" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Moon Name: <%= @moon.name %></h5>
+            <% if @moon.user_id.nil?%>
+                <p>Mooon Owner: No Owner</p>
+                <%= form_for(@moon, method: :patch) do |f|%>
+                    <%= f.submit "Claim", class: "btn btn-success" %>
+                <% end %>
+            <% else %>
+                <p>Mooon Owner: <%=@moon.user.display_name %></p>
+            <%end%>
+        </div>
     </div>
 
-    <div class="moon-info">
-        <p>Moon Name: <%= @moon.name %></p>
-        <% if @moon.user_id==nil%>
-            <%= form_for(@moon, method: :patch) do |f|%>
-                <%= f.submit "Claim", class: "btn btn-success" %>
-            <% end %>
-        <%end%>
-    </div>
 </div>

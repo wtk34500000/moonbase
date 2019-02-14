@@ -13,6 +13,9 @@
               <div class="form-label-group">
                 <%= password_field_tag :password, "", id:"inputPassword", class:"form-control", placeholder:"Password" %>
                 <label for="inputPassword">Password</label>
+                <% if flash[:error] %>
+                    <li style="color:red; margin-left:20px"><%= flash[:error] %></li>
+                <% end %>
               </div>
               <%= submit_tag "Sign In", class:"btn btn-lg btn-primary btn-block text-uppercase"%>
             <% end %>
