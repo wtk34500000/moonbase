@@ -28,7 +28,7 @@
             <%= link_to "Edit", "/home/users/#{@user.id}/edit", class: "btn btn-primary"%>
           </div>
           <div class="delete-button in-line">
-            <%= link_to "Delete", "/home/users/#{@user.id}", method: :delete, class: "btn btn-danger"%>
+            <%= link_to "Delete", "/home/users/#{@user.id}", method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"%>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@
                            </div>
                            <div class="sell-planet in-line">
                                <%= form_tag("/home/users/#{@user.id}/unclaim/#{moon.id}", method: :patch) do |f| %>
-                                   <%= submit_tag "Unclaim", class: "btn btn-danger"%>
+                                   <%= submit_tag "Unclaim", data: {confirm: "Are you sure?"}, class: "btn btn-danger"%>
                                <%end%>
                            </div>
                        </div>
