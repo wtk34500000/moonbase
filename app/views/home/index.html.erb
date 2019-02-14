@@ -2,7 +2,7 @@
 
 
   <div class="text-center" style="margin-top: 15px">
-   
+
       <header>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
@@ -51,9 +51,9 @@
         <div class="container">
           <% if log_in? %>
             <h1 class="font-weight-light">Welcome Back, <%= current_user.display_name %></h1>
-            <p class="lead">Please select moons or planets to get started.</p>
+            <p class="lead">Please select moons or planets to get started.</p><br>
           <% else %>
-            <p class="lead">Please login or signup.</p>
+            <p class="lead">Please login or signup.</p><br>
           <% end %>
         </div>
       </section>
