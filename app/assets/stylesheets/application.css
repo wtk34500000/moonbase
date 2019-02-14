@@ -200,9 +200,6 @@
     color: white
   }
   
-  .in-line{
-      display: inline-block;
-  }
   
   .carousel-item > img {
     height: 70vh;
@@ -656,4 +653,8 @@ body {
   background-image: url("https://images.unsplash.com/photo-1514413494665-cda1387955dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
 }
 
+.in-line{
+  display: inline-block;
+  margin: 10px 10px;
+}
 

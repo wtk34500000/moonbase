@@ -15,4 +15,16 @@ class User < ApplicationRecord
       #code
       rand(1..100) >= 99
     end
+
+    def get_planet_count
+        Planet.all.select do |planet|
+            if !planet.get_owner.nil?
+              planet.get_owner.id == self.id
+            end
+        end.count
+    end
+
+    def to_s
+      "#{first_name} #{last_name}"
+    end
 end

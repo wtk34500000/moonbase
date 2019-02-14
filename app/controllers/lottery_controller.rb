@@ -1,5 +1,7 @@
 class LotteryController < ApplicationController
   layout 'lottery', only: [:index]
+  before_action :authorized
+  
   def index
     @user = User.find(params[:id])
   end

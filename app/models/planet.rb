@@ -15,4 +15,5 @@ class Planet < ApplicationRecord
       end
     end
 
+
 end
