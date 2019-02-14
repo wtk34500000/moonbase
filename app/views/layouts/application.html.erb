@@ -16,7 +16,7 @@
   <body>
     <nav>
       <span id="brand">
-        <a href="/home">Moon<i class="far fa-moon">Base</i></a>
+        <a href="/home">Moon<i class="far fa-moon"></i>Base</a>
       </span>
       <ul id="menu">
         <a href="/home"><li>HOME</li></a>
@@ -56,9 +56,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
     <script type="text/javascript">
         $(document).ready($(function() {
-            $("#toggle").click(function() {
-            $(this).toggleClass("on");
-            $("#resize").toggleClass("active");
+            $("#brand a").hover(function() {
+            $(this).css("color", "white");
+            $("i").removeClass("far");
+            $("i").addClass("fas");
+          }, function(){
+            $(this).css("color", "white");
+            $("i").removeClass("fas");
+            $("i").addClass("far");
             });
           })
         )
