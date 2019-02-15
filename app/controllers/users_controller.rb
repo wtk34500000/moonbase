@@ -4,7 +4,11 @@ class UsersController < ApplicationController
 
    #sign up form 
    def new
+      if log_in?
+        redirect_to "/home"
+      else
         @user=User.new
+      end
    end
 
    #create new user account

@@ -15,7 +15,7 @@ class User < ApplicationRecord
     # return true if the condition is true(1% chance)
     def lottery_win?
       #code
-      rand(1..100) >= 99
+      rand(1..100) >= 50
     end
 
     #return the number count of the user's planet owned
