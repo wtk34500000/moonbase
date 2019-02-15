@@ -2,10 +2,12 @@ class LotteryController < ApplicationController
   layout 'lottery', only: [:index]
   before_action :authorized
   
+  #lotter home page
   def index
     @user = User.find(params[:id])
   end
 
+  #redirect to to user profile page if he/she wins
   def lotto_win
     #code
     @user = User.find(params[:id])

@@ -1,7 +1,11 @@
 class SessionsController < ApplicationController
+
+    #log in form
     def new
     end
 
+    #create session for user if login 
+    #and take user to he/her profile page
     def create  
         flash[:error]=nil  
         user=User.find_by(email: params[:email])
@@ -17,6 +21,7 @@ class SessionsController < ApplicationController
         end
     end
 
+    #log out
     def destroy
         session.delete :user_id
         redirect_to "/home/login"

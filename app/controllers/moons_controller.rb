@@ -2,6 +2,7 @@ class MoonsController < ApplicationController
     before_action :authorized
     skip_before_action :authorized, only: [:index]
 
+    #index page for all moons
     def index
         if params[:q]
             @moon=Moon.find_by(name: params[:q].capitalize)
@@ -33,11 +34,13 @@ class MoonsController < ApplicationController
             end
     end
 
+    #show page for single moon
     def show
         @moon=Moon.find(params[:id])
         @user=User.find(current_user.id)
     end
 
+    #update ownership to moon
     def update
         @moon=Moon.find(params[:id])
         @user=User.find(current_user.id)

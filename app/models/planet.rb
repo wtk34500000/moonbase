@@ -9,6 +9,7 @@ class Planet < ApplicationRecord
       uniq_users.count == 1 && !uniq_users[0].nil?
     end
 
+    #return a owner instance
     def get_owner
       if self.has_owner?
         User.find(self.moons.first.user_id)

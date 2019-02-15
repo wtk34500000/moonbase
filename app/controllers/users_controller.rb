@@ -2,10 +2,12 @@ class UsersController < ApplicationController
     before_action :authorized
     skip_before_action :authorized, only: [:new, :create]
 
+   #sign up form 
    def new
         @user=User.new
    end
 
+   #create new user account
    def create
         user=User.new(user_params)
         if user.valid? && params[:user][:password] == params[:user][:confirm_password]
@@ -19,15 +21,18 @@ class UsersController < ApplicationController
         end
    end
 
+   #show user profile
    def show
         @user=User.find(params[:id])
    end
 
+   #user edit form
    def edit
     flash[:error]=nil
      @user=User.find(params[:id])
    end
 
+   #update user info
    def update
       @user=User.find(params[:id])
       if @user.update(user_params)
@@ -44,6 +49,7 @@ class UsersController < ApplicationController
         redirect_to "/home/users/#{params[:id]}"
    end
 
+   #delete user account
    def destroy
       user=User.find(params[:id])
       user.moons.each do |moon|
