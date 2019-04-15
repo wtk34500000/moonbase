@@ -1,24 +1,21 @@
-# README
+# Moonbase
+Website that allows users to claim moons and conquer planets in our solar system. Claiming all the moons 
+of a planet grants users ownership of that planet. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Features
+* Ability to create, edit, and delete accounts
+* Claim moons on their respective info page
+* Ownership of a planet is shown on a planet's info page
+* Search feature for a specific moon
+* Lottery feature to get moons that do not belongs to the user (can steal moons from other users)
 
-Things you may want to cover:
+## Setup
+Clone this repo to your desktop and run ```bundle install``` to install its dependencies.
 
-* Ruby version
+## Usage
+After installing the dependencies, go to the root directory of the project and run ```rails s``` 
+to start the application. You will be able to access if at localhost:3000. Sign up to create an account
+and start claiming moons!
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Demo
+Here is a video demo of Moonbase: [Demo](https://youtu.be/TZN7AIvkzJA)
