@@ -13,8 +13,8 @@ of a planet grants users ownership of that planet.
 Clone this repo to your desktop and run ```bundle install``` to install its dependencies.
 
 ## Usage
-After installing the dependencies, go to the root directory of the project and run ```rails s``` 
-to start the application. You will be able to access if at localhost:3000. Sign up to create an account
+After installing the dependencies, go to the root directory of the project and run ```rails db:migrate```. 
+To start the application run ```rails s```. You will be able to access if at localhost:3000. Sign up to create an account
 and start claiming moons!
 
 ## Demo
